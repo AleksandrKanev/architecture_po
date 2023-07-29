@@ -2,14 +2,14 @@ package hw_1;
 
 public class Book {
 
-    public User users;
     private String title;
     private String author;
     private String genre;
     private double price;
 
-    public void setUsers(User users) {
-        this.users = users;
+    public Book(String title, String author){
+        this.title = title;
+        this.author = author;
     }
 
     public String getTitle(){
@@ -40,7 +40,5 @@ public class Book {
     public void setPrice(double price) {
         this.price = price;
     }
-    public String getName(){
-        return this.users.getName();
-    }
+
 }

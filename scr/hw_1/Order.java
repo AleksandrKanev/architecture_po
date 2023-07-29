@@ -2,28 +2,26 @@ package hw_1;
 
 import javax.xml.crypto.Data;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Order{
-    private User users;
+    private static int count = 1;
     private Integer orderId;
-    private Data orderData;
-    private final List<Book> orderedBooks = new ArrayList<>();
+    private Date orderData;
+    private  List<Book> orderedBooks;
+
+    public Order(){
+        this.orderId = count;
+        count++;
+        this.orderData = new Date();
+        this.orderedBooks = new ArrayList<Book>();
+    }
+
+
 
     public Integer getOrderId() {
         return orderId;
-    }
-
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
-    }
-
-    public Data getOrderData() {
-        return orderData;
-    }
-
-    public void setOrderData(Data orderData) {
-        this.orderData = orderData;
     }
 
     public List<Book> getOrderedBooks() {
@@ -34,12 +32,7 @@ public class Order{
         orderedBooks.add(books);
     }
 
-
-    public String getUsers() {
-        return users.getName();
-    }
-
-    public void setUsers(User users) {
-        this.users = users;
+    public Date getOrderData() {
+        return orderData;
     }
 }

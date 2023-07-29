@@ -9,7 +9,13 @@ public class User {
     public Book books;
     private String name;
     private String email;
-    private List<Book> orderedBooks = new ArrayList<>();
+    private List<Order> orderedBooks;
+
+    public User(String name, String email){
+        this.name = name;
+        this.email = email;
+        this.orderedBooks = new ArrayList<>();
+    }
 
     public String getName() {
         return name;
@@ -27,23 +33,13 @@ public class User {
         this.email = email;
     }
 
-    public List<Book> getOrderedBooks() {
+    public List<Order> getOrderedBooks() {
         return orderedBooks;
     }
 
-    public void addBookToOrder(Book book) {
-        orderedBooks.add(book);
+    public void addBookToOrder(Order orders) {
+        orderedBooks.add(orders);
 
     }
-    public String getAuthor(Book book){
-        return book.getAuthor();
-    }
 
-
-    public void setOrders(Order orders) {
-        this.orders = orders;
-    }
-    public Integer getOrderId(){
-        return orders.getOrderId();
-    }
 }
